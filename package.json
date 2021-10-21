@@ -18,5 +18,6 @@
   "homepage": "https://github.com/eoinco/nci_2021#readme",
   "dependencies": {
     "web3": "^1.6.0"
-  }
+  },
+  "devDependencies": {}
 }
