@@ -6,7 +6,7 @@ const Web3 = require("web3")
 
 //instantiate web3
 
-const rpcURL = "https://ropsten.infura.io/v3/";
+const rpcURL = "https://ropsten.infura.io/v3/e527f8da4e6b4eeabd327a938f8a3ece";
 const web3 = new Web3(rpcURL);
 console.log("connected to web3");
 
@@ -198,10 +198,18 @@ const abi = [
 ]
 
 // connect to our contract on ropsten
+
+// get our contract on ropsten
+const address = "0x6613faf46b6a1650f2b3ff54e3c43d81ef3cd232";
+const owner = "0x5ccf074a1d7f2493279a8a1cf766caf5890480bf";
+
+const contract = new web3.eth.Contract(abi, address);
+console.log("connected to contract on ropsten")
+
 // run some of the methods in our contract (using javascript)
 
 
 
-console.log("hello world?");
+//console.log("hello world?");
 
 
