@@ -1,13 +1,15 @@
 // this is a basic readonly contract interaction file
+
+// this loads the web3 dependency
 const Web3 = require("web3")
 
 
-//today's lab
-
-//instantiate web3
-
+// set up an rpc (remote procedure call) to connect to an ethereum node
 const rpcURL = "https://ropsten.infura.io/v3/e527f8da4e6b4eeabd327a938f8a3ece";
+
+//instantiate web3 with this URl
 const web3 = new Web3(rpcURL);
+
 console.log("connected to web3");
 
 // get the ABI (interface) for our contract
@@ -270,10 +272,13 @@ const abi = [
 
 // connect to our contract on ropsten
 
-// get our contract on ropsten
+// specify our contract address
 const address = "0x6613faf46b6a1650f2b3ff54e3c43d81ef3cd232";
+
+// specifyour owner address
 const owner = "0x5ccf074a1d7f2493279a8a1cf766caf5890480bf";
 
+// instantiate a contract object
 const contract = new web3.eth.Contract(abi, address);
 console.log("connected to contract on ropsten")
 
@@ -283,6 +288,12 @@ const getTotalSupply = async() => {
     let totSupply = await contract.methods.totalSupply().call();
     return "total supply is: " + totSupply;
 }
+
+const getName= async() => {
+    let name = await contract.methods.name().call();
+    return "name: " + name;
+}
+
 
 const getBalanceOfOwner = async(owner) => {
     let bal = await contract.methods.balanceOf(owner).call();
@@ -305,6 +316,7 @@ const returnAllValues = async() => {
     console.log(await getSymbol());
     console.log(await getBalanceOfOwner(owner));
     console.log(await getDecimals());
+	console.log(await getName());
 }
 
 returnAllValues();
