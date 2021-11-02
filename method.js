@@ -2,14 +2,14 @@
 const Web3 = require('web3')
 
 // transaction crafting dependency
-const Tx = require('ethereumjs-tx')
+const Tx = require('ethereumjs-tx').Transaction
 
 require('dotenv').config()
 
 infuraToken = process.env.INFURA_TOKEN
 contractAddress = process.env.CONTRACT_ADDRESS
 ownerAddress = process.env.OWNER_ADDRESS
-privateKey = process.env.SUPER_SECRET_PRIVATE_KEY
+privateKey = Buffer.from(process.env.SUPER_SECRET_PRIVATE_KEY, 'hex')
 
 // get the ABI (interface) for our contract
 const abi = [
@@ -290,7 +290,7 @@ const transferToken = async(toAccount, amount) => {
 
     // generate a nonce
 
-    let txCount = await web3.eth.getTransaction(owner);
+    let txCount = await web3.eth.getTransactionCount(owner);
     console.log("tx count is " + txCount);
 
     // generate tx data
@@ -298,13 +298,24 @@ const transferToken = async(toAccount, amount) => {
         nonce: web3.utils.toHex(txCount),
         gasLimit: web3.utils.toHex(5000000),
         gasPrice: web3.utils.toHex(web3.utils.toWei('100', 'gwei')),
-        to: contract.methods.transfer(toAccount, amount).encodeABI()
+        to: contractAddress,
+        data: contract.methods.transfer(toAccount, amount).encodeABI()
     }
 
     const tx = new Tx(txObject, {chain: 'ropsten', hardfork: 'petersburg'})
 
     // sign the tx
     tx.sign(privateKey);
+
+    console.log('signed transaction with super private key')
+
+    // serialize the raw tx
+    const serializedTx = tx.serialize();
+    const raw = '0x' + serializedTx.toString('hex');
+    console.log('about to send transaction' + raw)
+    let txHash = await sendTx(raw);
+    console.log("transaction hash: " + txHash.transactionHash)
+    console.log("transaction in block: " + txHash.blockNumber)
 }
 // create a transaction to execute a metthod on the contract
 
@@ -312,3 +323,4 @@ const transferToken = async(toAccount, amount) => {
 
 // broadcast the transaction
 
+transferToken("0xFbC8857d46223C39C48BA844c5AB0159EA3B8692", 200)
