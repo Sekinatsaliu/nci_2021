@@ -300,6 +300,7 @@ const transferToken = async(toAccount, amount) => {
         gasPrice: web3.utils.toHex(web3.utils.toWei('100', 'gwei')),
         to: contractAddress,
         data: contract.methods.transfer(toAccount, amount).encodeABI()
+        // value: web3.utils.toHex(web3.utils.toWei(amount, 'ether')) < to do eth transfer (replace data)
     }
 
     const tx = new Tx(txObject, {chain: 'ropsten', hardfork: 'petersburg'})
