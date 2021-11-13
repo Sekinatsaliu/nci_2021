@@ -9,6 +9,7 @@ require('dotenv').config()
 //let's load our environment variables
 infuraToken = process.env.INFURA_TOKEN
 contractAddress = process.env.CONTRACT_ADDRESS
+ownerAddress = process.env.OWNER_ADDRESS
 
 // set up an rpc (remote procedure call) to connect to an ethereum node
 const rpcURL = "https://ropsten.infura.io/v3/" + infuraToken;
@@ -282,7 +283,7 @@ const abi = [
 const address = contractAddress;
 
 // specifyour owner address
-const owner = "0x5ccf074a1d7f2493279a8a1cf766caf5890480bf";
+const owner = ownerAddress;
 
 // instantiate a contract object
 const contract = new web3.eth.Contract(abi, address);
