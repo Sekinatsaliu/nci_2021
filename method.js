@@ -296,7 +296,7 @@ const transferToken = async(toAccount, amount) => {
     // generate tx data
     const txObject = {
         nonce: web3.utils.toHex(txCount),
-        gasLimit: web3.utils.toHex(5000000),
+        gasLimit: web3.utils.toHex(500000),
         gasPrice: web3.utils.toHex(web3.utils.toWei('100', 'gwei')),
         to: contractAddress,
         data: contract.methods.transfer(toAccount, amount).encodeABI()
@@ -305,7 +305,7 @@ const transferToken = async(toAccount, amount) => {
 
     const tx = new Tx(txObject, {chain: 'ropsten', hardfork: 'petersburg'})
 
-    // sign the tx
+    // sign the tx - THIS USES THE SECRET PRIVATE KEY
     tx.sign(privateKey);
 
     console.log('signed transaction with super private key')
@@ -313,7 +313,10 @@ const transferToken = async(toAccount, amount) => {
     // serialize the raw tx
     const serializedTx = tx.serialize();
     const raw = '0x' + serializedTx.toString('hex');
+
     console.log('about to send transaction' + raw)
+
+	// broadcast the transaction
     let txHash = await sendTx(raw);
     console.log("transaction hash: " + txHash.transactionHash)
     console.log("transaction in block: " + txHash.blockNumber)
