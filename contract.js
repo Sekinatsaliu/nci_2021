@@ -326,10 +326,9 @@ const returnAllValues = async() => {
 	console.log(await getName());
 }
 
-returnAllValues();
-
-
-
+//returnAllValues();
 //console.log("hello world?");
+
+module.exports = { getSymbol, getDecimals, getBalanceOfOwner, getName }
 
 
