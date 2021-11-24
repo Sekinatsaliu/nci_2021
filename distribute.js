@@ -28,8 +28,8 @@ const distribute = async() => {
     console.log(`distro addresses are: ${ distributionAddresses}`);
 
     // get the balance of token owner
-    let ownerBalance = contract.getBalanceOfOwner(ownerAddress);
-
+    let ownerBalance = await contract.getBalanceOfOwner(ownerAddress);
+    let ob = new BigNumber(ownerBalance);
     console.log(`owner balance is ${ownerBalance}`);
 
     //let bal = new BigNumber(1000000000000000000000000) // this should be owner balance from smart contract
