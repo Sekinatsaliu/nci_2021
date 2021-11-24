@@ -282,7 +282,7 @@ const address = contractAddress;
 // instantiate a contract object
 const contract = new web3.eth.Contract(abi, address);
 
-console.log("connected to contract on ropsten")
+console.log("connected to contract on ropsten");
 
 // specifyour owner address
 const owner = ownerAddress;
