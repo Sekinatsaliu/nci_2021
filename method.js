@@ -326,5 +326,5 @@ const transferToken = async(toAccount, amount) => {
 // sign the transaction with our private key
 
 // broadcast the transaction
-
-transferToken("0xFbC8857d46223C39C48BA844c5AB0159EA3B8692", 200)
+module.exports = { transferToken }
+//transferToken("0xFbC8857d46223C39C48BA844c5AB0159EA3B8692", 200)
