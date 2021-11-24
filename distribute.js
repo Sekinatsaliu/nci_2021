@@ -27,6 +27,11 @@ const distribute = async() => {
 
     console.log(`distro addresses are: ${ distributionAddresses}`);
 
+    // get the balance of token owner
+    let ownerBalance = contract.getBalanceOfOwner(ownerAddress);
+
+    console.log(`owner balance is ${ownerBalance}`);
+
     //let bal = new BigNumber(1000000000000000000000000) // this should be owner balance from smart contract
     //let fivePercent = bal.div(20)
     //// then we need to divide fivePercent by the number of addresses in the file
