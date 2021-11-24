@@ -11,7 +11,6 @@ let method = require("./method.js");
 let distribution = require("./distribute.js");
 
 const express = require("express");
-const { distribute } = require("./distribute.js");
 
 const app = express();
 
@@ -33,5 +32,5 @@ app.post('transfer', async(req, res) => {
 app.get('/distribute', async(req, res) =>{
     res.send(await distribute.distribute());
 })
-app.listen(port, () => console.log(`listening on port $(port)...`));
+app.listen(port, () => console.log(`listening on port ${port}...`));
 
