@@ -22,7 +22,7 @@ app.get('/symbol', async(req,res) => {
     res.send(await contract.getSymbol())
 })
 
-app.post('transfer', async(req, res) => {
+app.post('/transfer', async(req, res) => {
     let account_to = req.body.account_to;
     let amount = req.body.amount;
 
