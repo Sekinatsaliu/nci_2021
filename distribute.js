@@ -12,7 +12,7 @@ let fs = require("fs");
 let BigNumber = require("big-number");
 
 let method = require('./method.js');
-
+let contract = require('./contract.js');
 // this sets up my .env file
 require('dotenv').config()
 
@@ -30,7 +30,11 @@ const distribute = async() => {
     // get the balance of token owner
     let ownerBalance = await contract.getBalanceOfOwner(ownerAddress);
     let ob = new BigNumber(ownerBalance);
-    console.log(`owner balance is ${ownerBalance}`);
+    console.log('owner balance is' + ob);
+
+    // get five percent of this balance
+    let fivePercent = ob.div(20);
+    console.log(`five per cent of owner balance is ${fivePerCent}`);
 
     //let bal = new BigNumber(1000000000000000000000000) // this should be owner balance from smart contract
     //let fivePercent = bal.div(20)
