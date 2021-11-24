@@ -282,7 +282,7 @@ const owner = ownerAddress;
 const contract = new web3.eth.Contract(abi,address);
 
 // set up a send transaction method
-const sendTx=async(raw) => {
+const sendTx = async(raw) => {
     return await web3.eth.sendSignedTransaction(raw);
 }
 
@@ -317,7 +317,7 @@ const transferToken = async(toAccount, amount) => {
     console.log('about to send transaction' + raw)
 
 	// broadcast the transaction
-    let txHash = await sendTx(raw);
+    let txResponse = await sendTx(raw);
     console.log("transaction hash: " + txHash.transactionHash)
     console.log("transaction in block: " + txHash.blockNumber)
 }
