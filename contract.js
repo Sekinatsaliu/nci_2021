@@ -275,19 +275,17 @@ const abi = [
 		"type": "function"
 	}
 ]
-	
-
-// connect to our contract on ropsten
 
 // specify our contract address
 const address = contractAddress;
 
-// specifyour owner address
-const owner = ownerAddress;
-
 // instantiate a contract object
 const contract = new web3.eth.Contract(abi, address);
+
 console.log("connected to contract on ropsten")
+
+// specifyour owner address
+const owner = ownerAddress;
 
 // run some of the methods in our contract (using javascript)
 
