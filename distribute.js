@@ -50,7 +50,9 @@ const distribute = async() => {
     console.log(`distribution amount per address is ${distributionAmount}`);
 
     for (looper = 0; looper < numberOfAddresses; looper++) {
-        console.log(`about to distribute ${distributionAmount} ${tokenSymbol} to ${distributionAddresses[looper]}`);
+        console.log(`about to distribute ${tokenSymbol} ${distributionAmount} token send to ${distributionAddresses[looper]}`);
+        // execute a ERC20transfer(ownerAddress, distributionAddress[looper], distributionAmount);
+        let retval = await method.transferToken(distributionAddresses[looper], distributionAmount)
     }
     // loop through N accounts/addresses
     // for each account, do a transfer (get 5% of balance divide by N)
