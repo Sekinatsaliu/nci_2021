@@ -33,7 +33,7 @@ const distribute = async() => {
     console.log(`owner balance is ${ob}`);
 
     // get five percent of this balance
-    let fivePercent = ob.div(20);
+    let fivePerCent = ob.div(20);
     console.log(`five per cent of owner balance is ${fivePerCent}`);
 
     //let bal = new BigNumber(1000000000000000000000000) // this should be owner balance from smart contract
