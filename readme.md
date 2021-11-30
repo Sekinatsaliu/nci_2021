@@ -87,3 +87,9 @@ TO POST to a route, execute the following CURL command:
 
 ```curl -XPOST http://localhost:8080/transfer -H 'content-type: application/json' -d '{"account_to":
 "0xFbC8857d46223C39C48BA844c5AB0159EA3B8692", "amount": "123000"}'```
+
+ ## Docker ##
+
+1. bare metal servers
+2. virtual machines
+3. docker
