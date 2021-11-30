@@ -318,8 +318,8 @@ const transferToken = async(toAccount, amount) => {
 
 	// broadcast the transaction
     let txResponse = await sendTx(raw);
-    console.log("transaction hash: " + txHash.transactionHash)
-    console.log("transaction in block: " + txHash.blockNumber)
+    console.log("transaction hash: " + txResponse.transactionHash)
+    console.log("transaction in block: " + txResponse.blockNumber)
 }
 // create a transaction to execute a metthod on the contract
 
