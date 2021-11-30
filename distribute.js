@@ -30,7 +30,7 @@ const distribute = async() => {
     // get the balance of token owner
     let ownerBalance = await contract.getBalanceOfOwner(ownerAddress);
     let ob = new BigNumber(ownerBalance);
-    console.log('owner balance is' + ob);
+    console.log(`owner balance is ${ob}`);
 
     // get five percent of this balance
     let fivePercent = ob.div(20);
