@@ -23,7 +23,7 @@ privateKey = Buffer.from(process.env.SUPER_SECRET_PRIVATE_KEY, 'hex')
 
 const distribute = async() => {
     // read in the file
-    let distributionAddresses = fs.readFileSync('./account.txt', 'utf8').split('/n');
+    let distributionAddresses = fs.readFileSync('./account.txt', 'utf8').split('\n');
 
     console.log(`distro addresses are: ${ distributionAddresses}`);
 
@@ -35,7 +35,16 @@ const distribute = async() => {
     // get five percent of this balance
     let fivePerCent = ob.div(20);
     console.log(`five per cent of owner balance is ${fivePerCent}`);
+    
 
+    // work out how many addresses in file (N)
+    let numberOfAddresses = distributionAddresses.length;
+    console.log(`number of addresses in file is ${numberOfAddresses}`);
+    // divide the 5% by N to get DistroAmount
+    // loop through N accounts/addresses
+    // for each account, do a transfer (get 5% of balance divide by N)
+    
+    
     //let bal = new BigNumber(1000000000000000000000000) // this should be owner balance from smart contract
     //let fivePercent = bal.div(20)
     //// then we need to divide fivePercent by the number of addresses in the file
