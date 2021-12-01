@@ -77,19 +77,47 @@ To execute a javascript file using node.js, run the following command:
 We want to use large chunks of code that others have written to interact with Ethereum, like the web3 package.  Do this, we need to set up the Node Package Manager (npm).
 
 From inside your folder, to create your own package.json:
-
 ```$npm init```
 
+## CURL accessing of handlers ##
 
-## CURL accessing of handlers
+## TO POST to a route, execute the following CURL command ##
+```curl -XPOST http://localhost:8080/transfer -H 'content-type: application/json' -d '{"account_to": "0x4d60E7f9d4901816981a0E4c6D95F394159C6371", "amount": "123000"}' ```
 
-TO POST to a route, execute the following CURL command:
+## Docker ##
+## View running docker containers ##
 
-```curl -XPOST http://localhost:8080/transfer -H 'content-type: application/json' -d '{"account_to":
-"0xFbC8857d46223C39C48BA844c5AB0159EA3B8692", "amount": "123000"}'```
+ ```docker ps```
+ ### build a docker container ###
 
- ## Docker ##
+ ```docker build -t nci/lab2021```
+ ## run the image ##
+ ```docker run -p 8090:8080 --name nci-d nci/lab2021```
 
-1. bare metal servers
-2. virtual machines
-3. docker
+ ### kill a running container ###
+ ```docker kill [name]```
+
+ ### start/stop a container ###
+ ```docker start/stop [nmae]```
+
+ ### view logs ###
+ ```docker logs [name]```
+
+ ### view logs inside a container ###
+ ```docker logs -f [name]```
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
