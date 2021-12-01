@@ -1,4 +1,4 @@
-// SPDX-License-identifier: MySpecialLicense
+// SPDX-License-identifier: UnLicensed
 pragma solidity ^0.8.7;
 // an ERC20 token is a token, like BTC or ETH, accept it runs on the Ethereum chain
 
