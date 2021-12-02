@@ -90,7 +90,7 @@ From inside your folder, to create your own package.json:
  ```docker ps```
  ### build a docker container ###
 
- ```docker build -t nci/project2021```
+ ```docker build -t nci/project2021 .```
  ## run the image ##
  ```docker run -p 8090:8080 --name nci-d nci/project2021```
 
