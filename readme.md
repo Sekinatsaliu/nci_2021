@@ -105,6 +105,8 @@ From inside your folder, to create your own package.json:
 
  ### view logs inside a container ###
  ```docker logs -f [name]```
+ ## to view the docker image ##
+ ``` docker image ls ```
 
 
 
