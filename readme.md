@@ -90,15 +90,15 @@ From inside your folder, to create your own package.json:
  ```docker ps```
  ### build a docker container ###
 
- ```docker build -t nci/lab2021```
+ ```docker build -t nci/project2021```
  ## run the image ##
- ```docker run -p 8090:8080 --name nci-d nci/lab2021```
+ ```docker run -p 8090:8080 --name nci-d nci/project2021```
 
  ### kill a running container ###
  ```docker kill [name]```
 
  ### start/stop a container ###
- ```docker start/stop [nmae]```
+ ```docker start/stop [name]```
 
  ### view logs ###
  ```docker logs [name]```
