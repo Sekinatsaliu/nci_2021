@@ -17,11 +17,13 @@
   },
   "homepage": "https://github.com/eoinco/nci_2021#readme",
   "dependencies": {
+    "12": "^1.0.2",
     "big-number": "^2.0.0",
     "dotenv": "^10.0.0",
     "ethereumjs-tx": "^2.1.2",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
+    "node": "^17.3.0",
     "web3": "^1.6.0"
   },
   "devDependencies": {}
