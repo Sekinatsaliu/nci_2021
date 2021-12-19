@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Unlicensed
 // this is a basic readonly contract interaction file
 
 // this loads the web3 dependency
