@@ -1,3 +1,4 @@
+
 ## to distribute the token from distribution file
 ``` node distribute.js ```
 
@@ -5,11 +6,9 @@
 ## View running docker containers ##
 
  ```docker ps```
- ### build a docker container ###
-
- ```docker build -t nci/project2021 .```
- ## run the image ##
- ```docker run -p 8090:8080 --name nci -d nci/project2021```
+ 
+ ## using the docker-compose.yml file automatically runs the distribution
+ ```docker-compose up```
 
  ### kill a running container ###
  ```docker kill [name]```
@@ -30,9 +29,22 @@
 
  ## to clear everything in docker system
  ```docker system prune -a -f```
+## to connect my docker hub to docker
+```docker login```
 
- ## using the docker-compose.yml file automatically runs the distribution
- ```docker-compose up```
+ ## to tag docker image to docker hub using image Id
+ ```docker tag 524b98bcb608 sekinatsaliu/524b98bcb608:1.0```
+
+## to push docker image to docker hub using image Id
+ ```docker push sekinatsaliu/524b98bcb608:1.0```
+
+## to restart docker compose file
+```docker-compose restart```
+
+## to view transaction
+```docker logs nci_2021_nci2021_1```
+
+ 
 
 
 
